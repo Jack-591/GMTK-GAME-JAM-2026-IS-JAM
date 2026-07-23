@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgf4eongggbj7"]
 
 [ext_resource type="PackedScene" uid="uid://dgdlkvxjux3m5" path="res://Prefabs/player.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://c1bur5f0cm4fu" path="res://Prefabs/ghost.tscn" id="2_qxrlw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ac4j5"]
 size = Vector2(36, 25)
@@ -27,3 +28,6 @@ environment = SubResource("Environment_ac4j5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=698525559]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="CharacterBody3D" parent="." unique_id=1096268192 instance=ExtResource("2_qxrlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.267456, 9.536743e-07, 6.065301)
