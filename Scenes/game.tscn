@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgdlkvxjux3m5" path="res://Prefabs/player.tscn" id="1_ebmjs"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ac4j5"]
-size = Vector2(35, 30)
+size = Vector2(36, 25)
 
 [sub_resource type="Environment" id="Environment_ac4j5"]
 background_mode = 1
@@ -18,7 +18,7 @@ mesh = SubResource("PlaneMesh_ac4j5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
 
 [node name="Camera" type="Camera3D" parent="." unique_id=686399043]
-transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 16, 6)
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 16, 5)
 projection = 1
 size = 20.0
 
