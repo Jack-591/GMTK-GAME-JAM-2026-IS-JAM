@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_w5urg")
-name = "Candle"
+name = 1
 maxLight = 15
 damage = 8
 attackSpeed = 3

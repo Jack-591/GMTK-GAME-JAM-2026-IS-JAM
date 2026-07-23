@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://c0oa5p0pxe2gn"]
+
+[ext_resource type="Script" uid="uid://byll8otw7lo44" path="res://Scripts/Resources/Weapon.gd" id="1_p7wuo"]
+
+[resource]
+script = ExtResource("1_p7wuo")
+name = 2
+maxLight = 45
+damage = 6
+ability = "nothing"
+metadata/_custom_type_script = "uid://byll8otw7lo44"

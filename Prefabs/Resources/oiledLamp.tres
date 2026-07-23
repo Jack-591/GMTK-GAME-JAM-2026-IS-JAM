@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://g3b8bswwkflw"]
+
+[ext_resource type="Script" uid="uid://byll8otw7lo44" path="res://Scripts/Resources/Weapon.gd" id="1_gtaex"]
+
+[resource]
+script = ExtResource("1_gtaex")
+maxLight = 25
+damage = 6
+ability = "Block"
+metadata/_custom_type_script = "uid://byll8otw7lo44"
