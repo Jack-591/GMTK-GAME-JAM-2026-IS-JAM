@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_1kq47")
-name = 3
-maxLight = 40
-damage = 8
-attackSpeed = 1
+name = 6
+maxLight = 50
+damage = 4
+attackSpeed = 3
 rarity = 1
-ability = "stun w/ flash"
+ability = "constant small circle doing damage"
 metadata/_custom_type_script = "uid://byll8otw7lo44"
