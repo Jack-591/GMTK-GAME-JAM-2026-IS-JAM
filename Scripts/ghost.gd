@@ -1,14 +1,20 @@
 extends CharacterBody3D
-class_name Enemy
+
+
 @onready var player = $"../Player"
 const SPEED = 5
 const LOCK_X: float = 17
 const LOCK_Z: float = 9.3
+const MAX_HEALTH: int = 20
 
 var direction = 1
 var randX = randi_range(-30,30)
 var randZ = randi_range(-30,30)
 
+@onready var manager: Manager = $"../Manager"
+
+func _ready() -> void:
+	pass
 
 
 func _physics_process(_delta):
