@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-
-var SPEED = 9.0
 const UP = 2
 const DOWN = 4
 const LOCK_X: float = 17
 const LOCK_Z: float = 9.3
+const MAX_HEALTH = 100
+
+var speed = 9.0
 var thingx = 0
 var thingz = 0
 
@@ -24,20 +25,20 @@ func _physics_process(_delta: float) -> void:
 		thingz = 0
 		
 	if thingx == 1 and thingz == 1:
-		SPEED = 6.36
+		speed = 6.36
 	else:
-		SPEED = 9
+		speed = 9
 	
 	
 	
 	var directionX := Input.get_axis("left", "right")
 	var directionZ := Input.get_axis("up", "down")
 	if directionX != 0:
-		velocity.x = move_toward(velocity.x, directionX * SPEED, UP)
+		velocity.x = move_toward(velocity.x, directionX * speed, UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, DOWN)
 	if directionZ != 0:
-		velocity.z = move_toward(velocity.z, directionZ * SPEED, UP)
+		velocity.z = move_toward(velocity.z, directionZ * speed, UP)
 	else:
 		velocity.z = move_toward(velocity.z, 0, DOWN)
 

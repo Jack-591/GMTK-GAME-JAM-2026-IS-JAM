@@ -1,6 +1,6 @@
 extends Resource
 
-class_name Enemy
+class_name EnemyResource
 
 enum Names {Goon}
 
