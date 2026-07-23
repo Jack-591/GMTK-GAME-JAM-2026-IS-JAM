@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bgf4eongggbj7"]
+
+[ext_resource type="PackedScene" uid="uid://dgdlkvxjux3m5" path="res://Prefabs/player.tscn" id="1_ebmjs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ac4j5"]
+size = Vector2(35, 30)
+
+[sub_resource type="Environment" id="Environment_ac4j5"]
+background_mode = 1
+background_color = Color(0.37521866, 0.37521866, 0.37521863, 1)
+
+[node name="Game" type="Node" unique_id=1802895878]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1875839433]
+mesh = SubResource("PlaneMesh_ac4j5")
+
+[node name="Player" parent="." unique_id=1121103397 instance=ExtResource("1_ebmjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="." unique_id=686399043]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 16, 6)
+projection = 1
+size = 20.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1748943123]
+environment = SubResource("Environment_ac4j5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=698525559]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
