@@ -37,26 +37,26 @@ func _physics_process(_delta):
 		velocity = direction * speed
 	else:
 		velocity = Vector3(0,0,0)
-	
-	if dashCool == false and (global_position.z < player.global_position.z + 3 and global_position.z > player.global_position.z - 3 or dash == true):
+	#(global_position.z < player.global_position.z + 3 and global_position.z > player.global_position.z - 3 
+	if dashCool == false and (sqrt((global_position.x - player.global_position.x)**2 + (global_position.z - player.global_position.z)**2) < 10 or dash == true):
 		if dash == false:
 			$startup.start()
 			dash = true
 		if dashing == false:
-			if global_position.x > player.global_position.x:
-				#rotation.y = 180
-				look_at(player.position,Vector3.UP) 
-				saul = "left"
-			else:
-				#rotation.y = 0
-				saul = "right"
-				look_at(player.position,Vector3.UP) 
-		else:
+			#if global_position.x > player.global_position.x:
+				#global_rotation.y = 180
+				#look_at(player.position,Vector3.UP)
+				#saul = "left"
+			#else:
+				#global_rotation.y = 60
+				#saul = "right"
+				#look_at(player.position,Vector3.UP) 
+		#else:
 			
-			if saul == "right":
-				velocity.x = 15
-			else:
-				velocity.x = -15
+			#if saul == "right":
+				velocity = direction * 20
+			#else:
+			#	velocity.x = -15
 	else:
 		look_at(player.position,Vector3.UP) 
 	

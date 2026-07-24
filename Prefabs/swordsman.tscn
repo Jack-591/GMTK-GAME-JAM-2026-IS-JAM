@@ -244,11 +244,11 @@ value = 100.0
 show_percentage = false
 
 [node name="startup" type="Timer" parent="." unique_id=383219477]
-wait_time = 0.4
+wait_time = 0.5
 one_shot = true
 
 [node name="dash" type="Timer" parent="." unique_id=603661791]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="cooldown" type="Timer" parent="." unique_id=197908741]
