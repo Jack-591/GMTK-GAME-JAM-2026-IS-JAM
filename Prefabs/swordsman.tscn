@@ -12,35 +12,36 @@ metadata/_custom_type_script = "uid://bli42x8crcxfi"
 radius = 1.3
 height = 5.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ac4j5"]
-viewport_path = NodePath("HealthGUI/SubViewport")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egokq"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac4j5"]
 bg_color = Color(0.8403459, 0.06571147, 0.12162388, 1)
 border_width_bottom = 3
 border_color = Color(0.470711, 0.017401787, 0.047290966, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 expand_margin_bottom = 3.0
 shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytwwn"]
 bg_color = Color(0.003921569, 0.54901963, 0, 1)
-border_width_bottom = 3
+border_width_bottom = 8
 border_color = Color(0.0013742051, 0.33522314, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
 expand_margin_bottom = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ac4j5"]
+viewport_path = NodePath("HealthGUI/SubViewport")
 
 [sub_resource type="Animation" id="Animation_g750s"]
 resource_name = "Armature|ArmatureAction"
-length = 1.7083333333333333
+length = 1.7083334
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -208,40 +209,29 @@ enemyResource = SubResource("Resource_wowpa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3420002, 0)
 shape = SubResource("CapsuleShape3D_0e3nr")
 
-[node name="HealthGUI" type="Sprite3D" parent="." unique_id=1665120555]
-transform = Transform3D(-1, 0, 8.742278e-08, 8.444392e-08, 0.25881907, 0.9659258, -2.2626683e-08, 0.9659258, -0.25881907, 0.3, 5.56, 0)
-billboard = 1
-texture = SubResource("ViewportTexture_ac4j5")
-
-[node name="SubViewport" type="SubViewport" parent="HealthGUI" unique_id=1948249748]
-transparent_bg = true
-size = Vector2i(243, 50)
-
-[node name="Panel" type="Panel" parent="HealthGUI/SubViewport" unique_id=1409661945]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_egokq")
-
-[node name="ProgressBar" type="ProgressBar" parent="HealthGUI/SubViewport/Panel" unique_id=1236718666]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.034
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1236718666]
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.966
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 0.11199951
-offset_top = -20.0
-offset_right = -0.11199951
-offset_bottom = 20.0
+offset_top = -4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_ac4j5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ytwwn")
 value = 100.0
 show_percentage = false
+
+[node name="HealthGUI" type="Sprite3D" parent="." unique_id=1665120555]
+transform = Transform3D(-1, 0, 8.742278e-08, 8.444392e-08, 0.25881907, 0.9659258, -2.2626683e-08, 0.9659258, -0.25881907, 0, 5.56, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_ac4j5")
+
+[node name="SubViewport" type="SubViewport" parent="HealthGUI" unique_id=1948249748]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(576, 104)
 
 [node name="startup" type="Timer" parent="." unique_id=383219477]
 wait_time = 0.5
@@ -257,6 +247,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=675005392]
 libraries/ = SubResource("AnimationLibrary_ed2jq")
+speed_scale = 4.0
 
 [node name="Armature" type="Node3D" parent="." unique_id=2040036727]
 transform = Transform3D(-4.371139e-06, 100, 4.371139e-06, 0, -4.371139e-06, 100, 100, 4.371139e-06, 1.9106854e-13, 0, 3.0568879, 0)
@@ -288,21 +279,21 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(1, 1.4210853e-14, 2.3841854e-07, -1.5437449e-07, 0.7620708, 0.64749366, -1.8169182e-07, -0.6474936, 0.7620709, -3.2649132e-26, 0.004013971, 1.3036122e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.004013972, 0)
-bones/3/rotation = Quaternion(-0.34491244, 1.1189398e-07, -4.1116763e-08, 0.9386349)
+bones/3/rotation = Quaternion(-0.2805978, -0.096214965, -0.044814683, 0.9539388)
 bones/3/scale = Vector3(1, 0.99999994, 1)
 bones/4/name = "Bone.004"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.7409604, -0.6715193, 0.00628048, 0.67151934, 0.74080807, -0.016281208, 0.0062805144, 0.016281191, 0.9998477, 3.239839e-16, 0.008861268, -1.3600391e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(4.746496e-17, 0.008861273, -2.0023436e-10)
-bones/4/rotation = Quaternion(0.008725616, -8.031056e-09, 0.3598886, 0.9329545)
+bones/4/rotation = Quaternion(-0.019415617, -0.07997086, 0.13574214, 0.98732054)
 bones/4/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/5/name = "Bone.005"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.84283555, -0.53816956, -0.0013322908, 0.5381696, 0.8428241, 0.0045616524, -0.0013320558, -0.0045617213, 0.9999887, 1.7214842e-09, 0.008408515, 2.731925e-09)
 bones/5/enabled = true
 bones/5/position = Vector3(1.5832484e-10, 0.008408513, 7.8463924e-10)
-bones/5/rotation = Quaternion(-0.002376121, -6.155544e-08, 0.28032526, 0.95990217)
+bones/5/rotation = Quaternion(-0.041434135, -0.014762921, 0.06380908, 0.99699235)
 bones/5/scale = Vector3(1, 0.99999976, 0.99999994)
 bones/6/name = "Bone.005_end"
 bones/6/parent = 5

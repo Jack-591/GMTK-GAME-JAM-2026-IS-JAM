@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c1bur5f0cm4fu" path="res://Prefabs/goon.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://cwmy550p4nvaa" path="res://Prefabs/swordsman.tscn" id="4_3dryh"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ac4j5"]
-size = Vector2(36, 25)
+[sub_resource type="BoxMesh" id="BoxMesh_8741e"]
+size = Vector3(36, 1, 25)
 
 [sub_resource type="Environment" id="Environment_ac4j5"]
 background_mode = 1
@@ -18,7 +18,8 @@ background_color = Color(0.37521866, 0.37521866, 0.37521863, 1)
 script = ExtResource("1_wrm1d")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1875839433]
-mesh = SubResource("PlaneMesh_ac4j5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_8741e")
 
 [node name="Player" parent="." unique_id=1121103397 instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
