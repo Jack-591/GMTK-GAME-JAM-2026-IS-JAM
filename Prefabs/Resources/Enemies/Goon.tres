@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_mopx1")
+NOTCONFIGURED = false
 metadata/_custom_type_script = "uid://bli42x8crcxfi"
