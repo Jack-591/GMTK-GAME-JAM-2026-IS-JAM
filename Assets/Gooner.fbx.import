@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bk3hip7qe04mj"
-path="res://.godot/imported/Untitled.gooner.fbx-b00c2dabf17c8f87293fe1073a88c85e.scn"
+path="res://.godot/imported/Gooner.fbx-b6841cb89b79a23fd98ec9b4bf37587e.scn"
 
 [deps]
 
-source_file="res://Assets/Untitled.gooner.fbx"
-dest_files=["res://.godot/imported/Untitled.gooner.fbx-b00c2dabf17c8f87293fe1073a88c85e.scn"]
+source_file="res://Assets/Gooner.fbx"
+dest_files=["res://.godot/imported/Gooner.fbx-b6841cb89b79a23fd98ec9b4bf37587e.scn"]
 
 [params]
 

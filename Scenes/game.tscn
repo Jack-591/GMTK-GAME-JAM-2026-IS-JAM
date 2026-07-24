@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dgdlkvxjux3m5" path="res://Prefabs/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://w6653bvve7di" path="res://Scripts/Manager.gd" id="1_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://c1bur5f0cm4fu" path="res://Prefabs/Goon.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://cwmy550p4nvaa" path="res://Prefabs/charge.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://c1bur5f0cm4fu" path="res://Prefabs/goon.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cwmy550p4nvaa" path="res://Prefabs/swordsman.tscn" id="4_3dryh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ac4j5"]
 size = Vector2(36, 25)
@@ -34,8 +34,8 @@ environment = SubResource("Environment_ac4j5")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=698525559]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
-[node name="Ghost" parent="." unique_id=1096268192 instance=ExtResource("2_qxrlw")]
+[node name="Goon" parent="." unique_id=1096268192 instance=ExtResource("2_qxrlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 7)
 
-[node name="Goon" parent="." unique_id=1164825235 instance=ExtResource("4_3dryh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.149891, 0, -10.22641)
+[node name="Swordsman" parent="." unique_id=1848577586 instance=ExtResource("4_3dryh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)

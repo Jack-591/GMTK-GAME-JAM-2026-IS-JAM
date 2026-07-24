@@ -44,19 +44,19 @@ func _physics_process(_delta):
 			dash = true
 		if dashing == false:
 			if global_position.x > player.global_position.x:
-				rotation.y = 180
+				#rotation.y = 180
+				look_at(player.position,Vector3.UP) 
 				saul = "left"
 			else:
-				rotation.y = 0
+				#rotation.y = 0
 				saul = "right"
+				look_at(player.position,Vector3.UP) 
 		else:
 			
 			if saul == "right":
 				velocity.x = 15
-				
 			else:
 				velocity.x = -15
-				
 	else:
 		look_at(player.position,Vector3.UP) 
 	

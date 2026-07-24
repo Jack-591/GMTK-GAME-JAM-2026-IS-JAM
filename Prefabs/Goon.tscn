@@ -69,6 +69,7 @@ corner_radius_bottom_left = 3
 expand_margin_bottom = 3.0
 
 [node name="Goon" type="CharacterBody3D" unique_id=1096268192]
+collision_mask = 2
 script = ExtResource("1_3glp8")
 enemyResource = ExtResource("2_ytwwn")
 
