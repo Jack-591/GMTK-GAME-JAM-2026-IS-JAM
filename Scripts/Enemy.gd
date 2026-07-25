@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 class_name Enemy
 
+const ENABLED = false
+
 @export var enemyResource: EnemyResource
 
 @onready var manager: Manager = $"../Manager"
@@ -26,6 +28,8 @@ var dashCoolDown = true
 
 
 func _ready() -> void:
+	if not ENABLED:
+		return
 	assert(enemyResource != null,"%s at %s does not have an Enemy Resource!" % [name,get_path()])
 	assert(!enemyResource.NOTCONFIGURED, "%s at %s does not have an Enemy Resource Configured!" % [name,get_path()])
 	speed = enemyResource.speed
@@ -45,10 +49,13 @@ func _ready() -> void:
 	
 
 func _process(_delta) -> void:
-	
+	if not ENABLED:
+		return
 	healthBar.value = move_toward(healthBar.value,health,10*_delta)
 
 func _physics_process(_delta):
+	if not ENABLED:
+		return
 	direction = ((player.global_position) - global_position).normalized()
 	
 	if ability == EnemyResource.Abilities.Dash:
