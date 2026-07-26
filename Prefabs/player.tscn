@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1os1gxg76u2x" path="res://Scripts/Player/Player_Movement.gd" id="1_y6xdh"]
 [ext_resource type="Texture2D" uid="uid://t6vw1himf8k" path="res://Assets/brackeys_vfx_bundle/particles/alpha/flame_01_a.png" id="2_5wxv7"]
+[ext_resource type="Material" uid="uid://bdovnhx85yky6" path="res://new_standard_material_3d.tres" id="3_y5hcb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42m48"]
 radius = 0.6
@@ -107,6 +108,16 @@ color = Color(0, 0, 0, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_2nftw"]
 material = SubResource("StandardMaterial3D_4vwmv")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ac4j5"]
+gravity = Vector3(0, 0, 0)
+anim_speed_max = 0.26999998
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lquvc"]
+material = ExtResource("3_y5hcb")
+radius = 0.2
+height = 1.0
+radial_segments = 4
+
 [node name="Player" type="CharacterBody3D" unique_id=1121103397]
 script = ExtResource("1_y6xdh")
 
@@ -134,7 +145,6 @@ draw_pass_1 = SubResource("QuadMesh_ofjq7")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="MainCharacter" unique_id=414010924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.036807477, -0.16534889)
-visible = false
 amount = 48
 lifetime = 0.7
 randomness = 0.29
@@ -144,3 +154,12 @@ fixed_fps = 0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_y5hcb")
 draw_pass_1 = SubResource("QuadMesh_2nftw")
+
+[node name="AttackEffect" type="GPUParticles3D" parent="MainCharacter" unique_id=112540627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1991668, -1.2963016)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ac4j5")
+draw_pass_1 = SubResource("CapsuleMesh_lquvc")
+
+[node name="HitCast" type="RayCast3D" parent="MainCharacter" unique_id=1943407798]
+transform = Transform3D(0.772, 0, 0, 0, -8.849911e-08, -0.772, 0, 2.0246236, -3.374519e-08, 0.049751684, 1.68778, -0.50614315)

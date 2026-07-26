@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 class_name Enemy
 
-const ENABLED = false
+const ENABLED = true
 
 @export var enemyResource: EnemyResource
 
@@ -29,12 +29,13 @@ var dashCoolDown = true
 
 func _ready() -> void:
 	if not ENABLED:
+		set_script(null)
 		return
 	assert(enemyResource != null,"%s at %s does not have an Enemy Resource!" % [name,get_path()])
 	assert(!enemyResource.NOTCONFIGURED, "%s at %s does not have an Enemy Resource Configured!" % [name,get_path()])
 	speed = enemyResource.speed
 	maxHealth = enemyResource.maxHealth
-	enemyName = enemyResource.name
+	enemyName = EnemyResource.Names.keys()[enemyResource.name]
 	ability = enemyResource.ability
 	health = maxHealth
 	healthBar.max_value = maxHealth
@@ -107,3 +108,12 @@ func _on_dash_timeout():
 
 func _on_cooldown_timeout():
 	dashCoolDown = false
+
+
+func takeDamage(damage: int) -> void:
+
+	print("%s has taken %d damage!" % [enemyName,damage])
+	health -= damage
+	if health <= 0:
+		health = 0
+		print(enemyName + " Has died!")

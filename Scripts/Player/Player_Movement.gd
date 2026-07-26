@@ -6,9 +6,15 @@ const LOCK_X: float = 17
 const LOCK_Z: float = 9.3
 const MAX_HEALTH = 100
 @onready var playerModel = $MainCharacter
+@onready var hitCast = $MainCharacter/HitCast
 var speed = 9.0
 var thingx = 0
 var thingz = 0
+
+func _input(event: InputEvent ) -> void:
+	if event.is_action_pressed("attack"):
+		print("attack")
+		attack()
 
 func _physics_process(_delta: float) -> void:
 	var inputDirection = Input.get_vector("left","right","up","down")
@@ -40,3 +46,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	position.x = clampf(position.x,-LOCK_X,LOCK_X)
 	position.z = clampf(position.z,-LOCK_Z -1 ,LOCK_Z)
+
+func attack() -> void:
+	if hitCast.get_collider():
+		var object: Object= hitCast.get_collider()
+		print(object.name)
+		if object is Enemy:
+			print("take damage")
+			object.takeDamage(10)
